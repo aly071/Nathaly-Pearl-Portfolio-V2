@@ -4,9 +4,9 @@ import { useRef, useState } from 'react';
 const projects = [
   {
     title: 'TUP Navigate',
-    description: 'A campus navigation system...',
+    description: 'TUP Navigate is our campus navigation system designed to help new students easily find their way around the university. Think of it as a Google Maps, but made specifically for TUP — showing you exactly where buildings, classrooms, offices, and key spots are located. Whether youre looking for your next class or the nearest restroom, TUP Navigate has you covered.',
     tools: ['Figma', 'UI/UX', 'Prototyping'],
-    category: 'UX Design',
+    category: 'UI/UX Design',
     gallery: [
       '/images/tup-navigate.png',
       '/images/AI.png',
@@ -17,6 +17,25 @@ const projects = [
       '/images/AI5.png',
     ],
     liveUrl: null,
+  },
+  {
+    title: 'Wedding Management',
+    description: 'This web app is created to celebrate the wedding of John Ferino and Stephanie. It provides family and friends with all the essential details about the wedding, including event schedules, venue information, RSVP functionality, gallery, and more..',
+    tools: ['Figma', 'UI/UX', 'Prototyping', 'Canva'],
+    category: 'UI/UX Design',
+    gallery: [
+      '/images/js1.png',
+      '/images/js2.png',
+      '/images/js3.png',
+      '/images/js4.png',
+      '/images/js5.png',
+      '/images/js4.png',
+      '/images/js5.png',
+      '/images/js6.png',
+      '/images/js7.png',
+      '/images/js8.png',
+    ],
+    liveUrl: 'https://naestephakajohn.vercel.app/',
   },
   {
     title: 'Descry',
@@ -39,7 +58,7 @@ const projects = [
     description:
       'A sophisticated platform for evaluating programming assignments uisng rubric-based fuzzy logic, providing fair and accurate assessments for your code',
     tools: ['Canva', 'Adobe Illustrator', 'Figma'],
-    category: 'Graphic Design, UX Design',
+    category: 'UI/UX Design',
     gallery: [
       '/images/code1.png',
       '/images/code2.png',
@@ -156,14 +175,14 @@ const ProjectCard = ({
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
 
-        {/* Preview Image (first gallery image) */}
-        <div className="md:col-span-4 overflow-hidden rounded-xl">
+        {/* Preview Image — full image, no crop */}
+        <div className="md:col-span-4 overflow-hidden rounded-xl bg-muted flex items-center justify-center">
           <motion.img
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.03 }}
             transition={{ type: 'spring', stiffness: 200 }}
             src={project.gallery[0]}
             alt={project.title}
-            className="w-full h-[250px] md:h-[300px] object-cover rounded-xl"
+            className="w-full h-auto max-h-[320px] object-contain rounded-xl"
           />
         </div>
 
@@ -177,6 +196,18 @@ const ProjectCard = ({
           <p className="text-muted-foreground text-sm md:text-base">
             {project.description}
           </p>
+
+          {/* Tools — always visible */}
+          <div className="flex flex-wrap gap-2 pt-1">
+            {project.tools.map((tool) => (
+              <span
+                key={tool}
+                className="text-xs px-3 py-1 border border-border rounded-full text-muted-foreground"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -242,7 +273,7 @@ const Projects = () => {
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="bg-background max-w-5xl w-full rounded-2xl p-8 relative"
+              className="bg-background max-w-5xl w-full rounded-2xl p-8 relative max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close */}
@@ -253,8 +284,8 @@ const Projects = () => {
                 ✕
               </button>
 
-              {/* Main Image */}
-              <div className="relative mb-6">
+              {/* Main Image — full image, no crop */}
+              <div className="relative mb-6 bg-muted rounded-xl flex items-center justify-center">
                 <motion.img
                   key={activeImageIndex}
                   src={selectedProject.gallery[activeImageIndex]}
@@ -262,7 +293,7 @@ const Projects = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.4 }}
-                  className="w-full h-[400px] object-cover rounded-xl"
+                  className="w-full h-auto max-h-[500px] object-contain rounded-xl"
                 />
 
                 {/* Arrows */}
@@ -304,7 +335,7 @@ const Projects = () => {
                     <button
                       key={index}
                       onClick={() => setActiveImageIndex(index)}
-                      className={`rounded-lg overflow-hidden border-2 ${
+                      className={`rounded-lg overflow-hidden border-2 flex-shrink-0 bg-muted ${
                         activeImageIndex === index
                           ? 'border-primary'
                           : 'border-transparent'
@@ -313,7 +344,7 @@ const Projects = () => {
                       <img
                         src={img}
                         alt=""
-                        className="w-20 h-20 object-cover"
+                        className="w-20 h-20 object-contain"
                       />
                     </button>
                   ))}
