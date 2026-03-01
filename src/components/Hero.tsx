@@ -16,7 +16,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-primary font-body font-500 text-sm tracking-widest uppercase mb-4"
           >
-            Portfolio — 2025
+            Portfolio — 2026
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -26,7 +26,7 @@ const Hero = () => {
           >
             Nathaly Pearl
             <br />
-            <span className="text-primary">F. Salanatin</span>
+            <span className="text-primary">Salanatin</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
