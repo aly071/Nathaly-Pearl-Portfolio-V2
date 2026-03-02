@@ -9,7 +9,7 @@ const Footer = () => (
         viewport={{ once: true }}
         className="font-body text-sm text-muted-foreground"
       >
-        © 2025 Nathaly Pearl F. Salanatin. All rights reserved.
+        © 2026 Nathaly Pearl F. Salanatin. All rights reserved.
       </motion.p>
       <motion.p
         initial={{ opacity: 0 }}
