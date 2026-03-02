@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center section-padding pt-24 pb-16 relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+<div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
       
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         {/* Text */}
@@ -36,22 +36,29 @@ const Hero = () => {
           >
             Creative developer & designer crafting digital experiences with precision and purpose.
           </motion.p>
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
             className="flex gap-4"
           >
+            {/* Resume Button */}
             <a
-              href="#projects"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}
+              href="https://docs.google.com/document/d/1I-y0c32ZF_8ESYcoHKsc6wMff9KqAFVzawhL7E3GGEI/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-primary text-primary-foreground font-body font-500 text-sm rounded-sm hover:bg-primary/90 transition-colors"
             >
-              View Projects
+              Resume
             </a>
+
+            {/* Contact Me Button */}
             <a
               href="#contact"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="px-6 py-3 border border-border text-foreground font-body font-500 text-sm rounded-sm hover:border-primary hover:text-primary transition-colors"
             >
               Contact Me

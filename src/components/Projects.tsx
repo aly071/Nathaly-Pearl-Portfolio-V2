@@ -42,7 +42,7 @@ const projects = [
     description:
       'A skincare analysis app that uses facial scanning to detect common skin conditions such as acne, dryness, or irritation. It provides instant results along with recommended home remedies.',
     tools: ['Figma', 'UI/UX Design', 'Prototyping'],
-    category: 'UX Design',
+    category: 'UI/UX Design',
     gallery: [
       '/images/faceribil.png',
       '/images/faceribil1.png',
@@ -81,7 +81,7 @@ const projects = [
     liveUrl: null,
   },
   {
-    title: 'Personal Portfolio',
+    title: 'Personal Portfolio V1',
     description:
       'A responsive website that showcases skills, projects, and certifications with modern design principles.',
     tools: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
