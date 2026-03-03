@@ -17,7 +17,7 @@ const Footer = () => (
         viewport={{ once: true }}
         className="font-body text-xs text-muted-foreground/60"
       >
-        Designed & Built with ♥
+        Designed with love and countless cups of matcha ♥
       </motion.p>
     </div>
   </footer>
