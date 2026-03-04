@@ -6,6 +6,7 @@ export default function ProjectCase({ project, onImageClick }: any) {
   const hasMainImage = !!project.mainImage;
   const isApp = project.projectType === 'app';
   const isWebsite = project.projectType === 'website';
+  const isPair = !!project.secondaryImage; // for poster/paired layout
 
   return (
     <section
@@ -20,11 +21,13 @@ export default function ProjectCase({ project, onImageClick }: any) {
         overflow-hidden
       "
     >
+      {/* Ambient Gradient Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-purple-500/10 blur-[160px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* ================== APP PROJECT ================== */}
         {isApp && hasMainImage ? (
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <motion.div
@@ -33,25 +36,19 @@ export default function ProjectCase({ project, onImageClick }: any) {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                {project.title}
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">{project.title}</h2>
+              <p className="text-gray-400 leading-relaxed mb-8">{project.description}</p>
 
-              <p className="text-gray-400 leading-relaxed mb-8">
-                {project.description}
-              </p>
-
+              {/* Tools */}
               <div className="flex flex-wrap gap-3 mb-10">
                 {project.tools.map((tool: string) => (
-                  <span
-                    key={tool}
-                    className="px-4 py-1 text-sm bg-white/10 rounded-full"
-                  >
+                  <span key={tool} className="px-4 py-1 text-sm bg-white/10 rounded-full">
                     {tool}
                   </span>
                 ))}
               </div>
 
+              {/* Small Thumbnails */}
               <div className="flex gap-4 flex-wrap">
                 {project.gallery
                   .filter((img: string) => img !== project.mainImage)
@@ -75,14 +72,12 @@ export default function ProjectCase({ project, onImageClick }: any) {
               transition={{ duration: 0.6 }}
               className="flex justify-center"
             >
-              <img
-                src={project.mainImage}
-                className="max-h-[560px] object-contain"
-                alt=""
-              />
+              <img src={project.mainImage} className="max-h-[560px] object-contain" alt="" />
             </motion.div>
           </div>
-        ) : isWebsite && hasMainImage ? (
+
+        ) : isWebsite && hasMainImage && !isPair ? (
+          /* ================== WEBSITE PROJECT ================== */
           <div className="grid gap-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -120,20 +115,14 @@ export default function ProjectCase({ project, onImageClick }: any) {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                {project.title}
-              </h2>
-
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">{project.title}</h2>
               <p className="text-gray-400 leading-relaxed mb-6 max-w-3xl mx-auto">
                 {project.description}
               </p>
 
               <div className="flex flex-wrap gap-3 justify-center mb-6">
                 {project.tools.map((tool: string) => (
-                  <span
-                    key={tool}
-                    className="px-4 py-1 text-sm bg-white/10 rounded-full"
-                  >
+                  <span key={tool} className="px-4 py-1 text-sm bg-white/10 rounded-full">
                     {tool}
                   </span>
                 ))}
@@ -150,16 +139,47 @@ export default function ProjectCase({ project, onImageClick }: any) {
                 </a>
               )}
             </motion.div>
+
           </div>
+
+        ) : isPair ? (
+          /* ================== PAIR LAYOUT (POSTER) ================== */
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={project.mainImage}
+                alt=""
+                className="w-full h-auto object-contain rounded-xl shadow-lg"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src={project.secondaryImage}
+                alt=""
+                className="w-full h-auto object-contain rounded-xl shadow-lg"
+              />
+            </motion.div>
+          </div>
+
         ) : (
+          /* ================== DEFAULT/GALLERY PROJECT ================== */
           <div
             className={`grid gap-16 items-center ${
               isCenter ? 'text-center max-w-5xl mx-auto' : 'md:grid-cols-2'
             }`}
           >
-            {!isRight && !isCenter && (
-              <Gallery project={project} onImageClick={onImageClick} />
-            )}
+            {!isRight && !isCenter && <Gallery project={project} onImageClick={onImageClick} />}
 
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -167,26 +187,16 @@ export default function ProjectCase({ project, onImageClick }: any) {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                {project.title}
-              </h2>
-
-              <p className="text-gray-400 leading-relaxed mb-8">
-                {project.description}
-              </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">{project.title}</h2>
+              <p className="text-gray-400 leading-relaxed mb-8">{project.description}</p>
 
               <div
                 className={`flex flex-wrap gap-3 ${
-                  isCenter
-                    ? 'justify-center'
-                    : 'justify-center md:justify-start'
+                  isCenter ? 'justify-center' : 'justify-center md:justify-start'
                 }`}
               >
                 {project.tools.map((tool: string) => (
-                  <span
-                    key={tool}
-                    className="px-4 py-1 text-sm bg-white/10 rounded-full"
-                  >
+                  <span key={tool} className="px-4 py-1 text-sm bg-white/10 rounded-full">
                     {tool}
                   </span>
                 ))}
@@ -205,7 +215,6 @@ export default function ProjectCase({ project, onImageClick }: any) {
             </motion.div>
 
             {isRight && <Gallery project={project} onImageClick={onImageClick} />}
-
             {isCenter && (
               <div className="mt-14">
                 <Gallery project={project} onImageClick={onImageClick} />
@@ -218,6 +227,7 @@ export default function ProjectCase({ project, onImageClick }: any) {
   );
 }
 
+/* ================== GALLERY COMPONENT ================== */
 function Gallery({ project, onImageClick }: any) {
   const sizeClass =
     project.imageSize === 'xlarge'

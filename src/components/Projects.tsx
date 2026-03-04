@@ -160,7 +160,18 @@ const projects = [
     mainImage: '/images/Matcha.png',   
     projectType: 'website',            
     liveUrl: null,
-  }
+  },
+  {
+    title: 'Poster',
+    description:
+      'A visually enticing advertisement combining bold typography and vibrant imagery.',
+    tools: ['Canva', 'Adobe Illustrator'],
+    mainImage: '/images/socmed4.png',  
+    secondaryImage: '/images/socmed5.png', 
+    projectType: 'website',            
+    liveUrl: null,
+    imageSize: 'xlarge', 
+  },
 ];
 
 const layouts = ['left', 'right', 'center'];
