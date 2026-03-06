@@ -24,6 +24,18 @@ const techLogos = [
   { node: <SiGithub />, title: 'GitHub' },
 ];
 
+const techLogosWithTooltip = techLogos.map((logo) => ({
+  ...logo,
+  node: (
+    <div className="group relative flex items-center justify-center">
+      {logo.node}
+      <span className="pointer-events-none absolute -bottom-7 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-body font-500 text-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 drop-shadow-md">
+        {logo.title}
+      </span>
+    </div>
+  ),
+}));
+
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -46,7 +58,7 @@ const Skills = () => {
 
       <div className="relative h-24 md:h-32 overflow-hidden">
         <LogoLoop
-          logos={techLogos}
+          logos={techLogosWithTooltip}
           speed={40}
           direction="left"
           logoHeight={48}
@@ -61,7 +73,7 @@ const Skills = () => {
 
       <div className="relative h-24 md:h-32 overflow-hidden mt-4">
         <LogoLoop
-          logos={[...techLogos].reverse()}
+          logos={[...techLogosWithTooltip].reverse()}
           speed={30}
           direction="right"
           logoHeight={40}
