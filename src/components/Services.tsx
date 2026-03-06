@@ -41,7 +41,7 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="services" className="section-padding py-24 md:py-32 bg-secondary/30">
+    <section id="services" className="section-padding py-24 md:py-32 bg-black">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}

@@ -37,7 +37,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="section-padding py-24 md:py-32 bg-secondary/30"
+      className="section-padding py-24 md:py-32 bg-transparent"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

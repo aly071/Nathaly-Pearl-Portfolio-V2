@@ -48,9 +48,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  /* Removed: * { @apply border-border; } — this was causing lines between all sections */
 
   body {
     @apply bg-background text-foreground font-body antialiased;

@@ -65,8 +65,7 @@ const Skills = () => {
           gap={60}
           hoverSpeed={0}
           scaleOnHover
-          fadeOut
-          fadeOutColor="hsl(0 0% 7%)"
+          fadeOut={false}
           ariaLabel="Skills and technologies"
         />
       </div>
@@ -79,8 +78,7 @@ const Skills = () => {
           logoHeight={40}
           gap={50}
           hoverSpeed={0}
-          fadeOut
-          fadeOutColor="hsl(0 0% 7%)"
+          fadeOut={false}
           ariaLabel="Skills and technologies"
         />
       </div>
