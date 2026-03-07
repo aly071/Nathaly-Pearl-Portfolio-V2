@@ -17,14 +17,21 @@ interface Project {
 // ── Data ───────────────────────────────────────────────────────────────────
 const projects: Project[] = [
   {
-    // same as Descry → wide
     title: 'TUP Navigate',
     category: 'UI/UX Design • Mobile',
     description: 'TUP Navigate is a campus navigation system designed to help students easily locate buildings, classrooms, and offices.',
     tools: ['Figma', 'UI/UX', 'Prototyping'],
-    gallery: ['/images/tup-navigate.png', '/images/AI.png', '/images/AI1.png', '/images/AI2.png', '/images/AI3.png', '/images/AI4.png', '/images/AI5.png'],
+    gallery: [
+      '/images/tup-navigate.png',
+      '/images/AI.png',
+      '/images/AI1.png',
+      '/images/AI2.png',
+      '/images/AI3.png',
+      '/images/AI4.png',
+      '/images/AI5.png'
+    ],
     mainImage: '/images/tup-navigate.png',
-    liveUrl: null,
+    liveUrl: 'https://www.figma.com/proto/mgyZyDaJlipccnKLLUXJyv/TUP-Navigate?node-id=2-398&p=f&t=TJwjcPcs22jZ2Tp0-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A398&show-proto-sidebar=1',
     filter: 'app',
     size: 'wide',
   },
@@ -36,7 +43,7 @@ const projects: Project[] = [
     tools: ['Figma', 'UI/UX Design', 'Prototyping'],
     gallery: ['/images/faceribil.png', '/images/faceribil1.png', '/images/faceribil2.png', '/images/faceribil3.png', '/images/faceribil4.png', '/images/faceribil5.png'],
     mainImage: '/images/faceribil.png',
-    liveUrl: null,
+    liveUrl: 'https://www.figma.com/proto/fRcQOhrxARfQ4VlZKQ5gNA/Face-Ribil?node-id=261-254&p=f&t=K3g9ZGubhUEFKmE3-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=261%3A254',
     filter: 'app',
     size: 'wide',
   },
@@ -72,7 +79,7 @@ const projects: Project[] = [
     tools: ['Figma', 'UI/UX Design', 'Prototyping'],
     gallery: ['/images/Talkie-chum.png', '/images/chum1.png', '/images/chum2.png', '/images/chum3.png'],
     mainImage: '/images/Talkie-chum.png',
-    liveUrl: null,
+    liveUrl: 'https://www.figma.com/design/WZ7t91jWFmAudwPsPGNoTp/AUTOMATA-?node-id=0-1&t=G6LmLCWmxWMjOZVH-1',
     filter: 'app',
     size: 'wide',
   },
@@ -96,7 +103,7 @@ const projects: Project[] = [
     tools: ['ASP.NET MVC', 'C#', 'UI/UX Design', 'Figma'],
     gallery: ['/images/Onboarding.png', '/images/o1.png', '/images/o2.png', '/images/o3.png', '/images/o4.png', '/images/o5.png', '/images/o6.png', '/images/o7.png'],
     mainImage: '/images/Onboarding.png',
-    liveUrl: null,
+    liveUrl: 'https://www.figma.com/design/ZpdZtv69BU107hocLYIeaG/Paramount?node-id=0-1&t=nKWk7jlhOvlhujcJ-1',
     filter: 'web',
     size: 'wide',
   },
