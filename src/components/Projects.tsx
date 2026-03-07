@@ -101,6 +101,17 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
+    title: 'Dear Future Me',
+    category: 'UI/UX Design • Mobile',
+    description: 'Dear Future Me is a cute and interactive web application that allows users to write a letter to their future selves',
+    tools: ['Figma', 'UI/UX', 'Prototyping', 'Canva'],
+    gallery: ['/images/Future.png', '/images/Future1.png', '/images/Future2.png', '/images/Future3.png', '/images/Future4.png'],
+    mainImage: '/images/Future.png',
+    liveUrl: null,
+    filter: 'app',
+    size: 'wide',
+  },
+  {
     // same as Descry → wide
     title: 'Social Media Design',
     category: 'Graphics • Branding',
