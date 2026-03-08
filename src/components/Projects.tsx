@@ -161,7 +161,7 @@ const projects: Project[] = [
     tools: ['Canva', 'Adobe Illustrator'],
     gallery: ['/images/socmed4.png', '/images/socmed5.png'],
     mainImage: '/images/socmed4.png',
-    liveUrl: null,
+    liveUrl: 'https://www.canva.com/design/DAHC-MNDcAw/DxLWv9RBn3iha5fQp1hR6A/edit?utm_content=DAHC-MNDcAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
     filter: 'graphics',
     size: 'tall', 
   },
