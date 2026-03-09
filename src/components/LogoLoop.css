@@ -19,7 +19,8 @@
   display: flex;
   width: max-content;
   will-change: transform;
-  user-select: none;
+  -webkit-user-select: none; 
+  user-select: none; 
   position: relative;
   z-index: 0;
 }

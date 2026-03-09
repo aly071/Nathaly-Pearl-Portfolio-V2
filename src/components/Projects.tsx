@@ -188,7 +188,6 @@ const aspectClasses: Record<string, string> = {
   poster:   'aspect-square md:aspect-[21/9]',
 };
 
-// ── Lightbox ───────────────────────────────────────────────────────────────
 function Lightbox({
   project,
   onClose,
@@ -216,7 +215,6 @@ function Lightbox({
       onClick={handleBackdrop}
     >
       <div className="relative w-full max-w-4xl flex flex-col items-center gap-4">
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute -top-10 right-0 text-white/50 hover:text-white text-sm tracking-widest uppercase transition-colors"
@@ -224,7 +222,6 @@ function Lightbox({
           ✕ Close
         </button>
 
-        {/* Main image */}
         <div className="relative w-full overflow-hidden rounded-2xl bg-white/5">
           <AnimatePresence mode="wait">
             <motion.img
@@ -239,7 +236,6 @@ function Lightbox({
             />
           </AnimatePresence>
 
-          {/* Prev / Next arrows */}
           {images.length > 1 && (
             <>
               <button
@@ -258,7 +254,6 @@ function Lightbox({
           )}
         </div>
 
-        {/* Info row */}
         <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
             <h3 className="text-white font-semibold text-lg">{project.title}</h3>
@@ -283,7 +278,6 @@ function Lightbox({
           </div>
         </div>
 
-        {/* Thumbnail strip */}
         {images.length > 1 && (
           <div className="flex gap-2 flex-wrap justify-center">
             {images.map((img, i) => (
@@ -304,7 +298,6 @@ function Lightbox({
   );
 }
 
-// ── Main Component ─────────────────────────────────────────────────────────
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selected, setSelected] = useState<Project | null>(null);
@@ -318,7 +311,6 @@ const Projects = () => {
     <section id="projects" className="bg-black text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
-        {/* ── Header ── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -338,7 +330,6 @@ const Projects = () => {
             </p>
           </motion.div>
 
-          {/* ── Filter Tabs ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +353,6 @@ const Projects = () => {
           </motion.div>
         </div>
 
-        {/* ── Masonry Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-auto">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
@@ -376,7 +366,6 @@ const Projects = () => {
                 className={`group cursor-pointer ${colClasses[project.size]}`}
                 onClick={() => setSelected(project)}
               >
-                {/* Image */}
                 <div className={`relative overflow-hidden rounded-2xl bg-white/5 ${aspectClasses[project.size]}`}>
                   <img
                     src={project.mainImage}
@@ -384,10 +373,8 @@ const Projects = () => {
                     className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.04]"
                   />
 
-                  {/* Hover tint */}
                   <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  {/* Gallery count pill */}
                   {project.gallery.length > 1 && (
                     <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
                       <div className="flex -space-x-1.5">
@@ -401,7 +388,6 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Live badge */}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -415,7 +401,6 @@ const Projects = () => {
                   )}
                 </div>
 
-                {/* Title & category */}
                 <div className="mt-4 px-1">
                   <h3 className="text-white text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                     {project.title}
@@ -429,13 +414,11 @@ const Projects = () => {
           </AnimatePresence>
         </div>
 
-        {/* ── Bottom divider ── */}
         <div className="mt-20 flex justify-center">
           <div className="h-px w-24 bg-primary/30" />
         </div>
       </div>
 
-      {/* ── Lightbox ── */}
       <AnimatePresence>
         {selected && (
           <Lightbox project={selected} onClose={() => setSelected(null)} />

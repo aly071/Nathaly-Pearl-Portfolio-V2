@@ -42,9 +42,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* LEFT SIDE */}
           <div>
-            {/* Header */}
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 40 }}
@@ -66,7 +64,6 @@ const Contact = () => {
               </p>
             </motion.div>
 
-            {/* Contact Items */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -100,7 +97,6 @@ const Contact = () => {
                 </div>
               ))}
 
-              {/* Available badge */}
               <div className="mt-2 flex items-center gap-2 w-fit px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-xs font-body text-muted-foreground">
@@ -110,7 +106,6 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE — Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -118,17 +113,14 @@ const Contact = () => {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-72 md:w-80 lg:w-96">
-              {/* Glow */}
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-xl blur-2xl" />
 
-              {/* Image */}
               <img
                 src={portraitImg}
                 alt="Nathaly Pearl F. Salanatin"
                 className="relative w-full aspect-[3/4] object-cover object-top rounded-xl grayscale hover:grayscale-0 transition-all duration-700"
               />
 
-              {/* Bottom fade */}
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent rounded-b-xl" />
             </div>
           </motion.div>

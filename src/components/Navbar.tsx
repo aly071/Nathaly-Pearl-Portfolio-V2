@@ -50,7 +50,6 @@ const Navbar = () => {
           NPS<span className="text-primary">.</span>
         </a>
 
-        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
@@ -64,7 +63,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop CTA Button */}
         <div className="hidden md:block">
           <a
             href="#contact"
@@ -75,7 +73,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
@@ -96,7 +93,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

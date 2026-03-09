@@ -8,15 +8,12 @@ const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center section-padding pt-24 pb-16 relative overflow-hidden"
     >
-      {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
       
       <div className="w-full max-w-7xl mx-auto relative z-10">
-        {/* Solid dark SpotlightCard */}
         <SpotlightCard className="p-10 md:p-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            {/* TEXT SIDE */}
             <div className="order-2 lg:order-1">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -75,7 +72,6 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* IMAGE SIDE */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

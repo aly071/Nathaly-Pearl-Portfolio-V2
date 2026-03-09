@@ -19,7 +19,6 @@ export default function ImageLightbox({ images, index, onClose }: any) {
   return (
     <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
 
-      {/* Close */}
       <button
         onClick={onClose}
         className="absolute top-6 right-8 text-white text-3xl"
@@ -27,7 +26,6 @@ export default function ImageLightbox({ images, index, onClose }: any) {
         ✕
       </button>
 
-      {/* Previous */}
       <button
         onClick={prev}
         className="absolute left-10 text-white text-5xl"
@@ -35,13 +33,12 @@ export default function ImageLightbox({ images, index, onClose }: any) {
         ‹
       </button>
 
-      {/* Image */}
       <img
         src={images[current]}
+        alt={`Project image ${current + 1}`}
         className="max-h-[85vh] max-w-[90vw] object-contain"
       />
 
-      {/* Next */}
       <button
         onClick={next}
         className="absolute right-10 text-white text-5xl"

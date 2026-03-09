@@ -71,21 +71,27 @@ const ProjectModal = ({ project, activeImageIndex, setActiveImageIndex, onClose 
           )}
         </div>
 
-        {project.gallery.length > 1 && (
-          <div className="flex gap-3 mb-6 overflow-x-auto">
-            {project.gallery.map((img, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveImageIndex(index)}
-                className={`rounded-lg overflow-hidden border-2 flex-shrink-0 bg-muted ${
-                  activeImageIndex === index ? 'border-primary' : 'border-transparent'
-                }`}
-              >
-                <img src={img} alt="" className="w-20 h-20 object-contain" />
-              </button>
-            ))}
-          </div>
-        )}
+          {project.gallery.length > 1 && (
+            <div className="flex gap-3 mb-6 overflow-x-auto">
+              {project.gallery.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveImageIndex(index)}
+                  aria-label={`View image ${index + 1}`}
+                  title={`View image ${index + 1}`}
+                  className={`rounded-lg overflow-hidden border-2 flex-shrink-0 bg-muted ${
+                    activeImageIndex === index ? 'border-primary' : 'border-transparent'
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Project thumbnail ${index + 1}`}
+                    className="w-20 h-20 object-contain"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
 
         <h3 className="text-3xl font-semibold mb-4">{project.title}</h3>
         <p className="text-muted-foreground mb-6">{project.description}</p>

@@ -44,7 +44,6 @@ const Services = () => {
     <section id="services" className="section-padding py-24 md:py-32 bg-black">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -63,7 +62,6 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, i) => (
             <motion.div
@@ -77,7 +75,6 @@ const Services = () => {
                   : 'bg-card border-border hover:border-primary/30 hover:shadow-primary/5'
               }`}
             >
-              {/* Icon */}
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ${
                   service.featured
@@ -88,7 +85,6 @@ const Services = () => {
                 {service.icon}
               </div>
 
-              {/* Title */}
               <h3
                 className={`heading-editorial text-xl md:text-2xl mb-3 ${
                   service.featured ? 'text-white' : 'text-foreground'
@@ -97,7 +93,6 @@ const Services = () => {
                 {service.title}
               </h3>
 
-              {/* Description */}
               <p
                 className={`font-body text-sm leading-relaxed mt-auto ${
                   service.featured ? 'text-white/80' : 'text-muted-foreground'
@@ -109,7 +104,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Additional Skills pills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
