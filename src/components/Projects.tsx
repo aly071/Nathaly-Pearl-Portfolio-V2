@@ -14,7 +14,6 @@ interface Project {
   size: 'tall' | 'wide' | 'standard' | 'poster';
 }
 
-// ── Data ───────────────────────────────────────────────────────────────────
 const projects: Project[] = [
   {
     title: 'TUP Navigate',
@@ -89,7 +88,7 @@ const projects: Project[] = [
     category: 'Web Development • Bootstrap',
     description: 'A responsive portfolio website showcasing skills, projects, and certifications.',
     tools: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-    gallery: ['/images/portfoliov1.png', '/images/port1.png', '/images/port2.png', '/images/port3.png', '/images/port4.png'],
+    gallery: ['/images/portfoliov1.png', '/images/port2.png', '/images/port3.png', '/images/port4.png'],
     mainImage: '/images/portfoliov1.png',
     liveUrl: 'https://aly071.github.io/aly071-v1/',
     filter: 'web',
@@ -109,12 +108,12 @@ const projects: Project[] = [
   },
   {
     title: 'Dear Future Me',
-    category: 'UI/UX Design • Mobile',
+    category: 'UI/UX Design • Web Development • ',
     description: 'Dear Future Me is a cute and interactive web application that allows users to write a letter to their future selves',
     tools: ['Figma', 'UI/UX', 'Prototyping', 'Canva'],
-    gallery: ['/images/Future.png', '/images/Future1.png', '/images/Future2.png', '/images/Future3.png', '/images/Future4.png'],
+    gallery: ['/images/Future.png', '/images/Future1.png', '/images/Future2.png', '/images/Future3.png', '/images/Future4.png', '/images/Future5.png'],
     mainImage: '/images/Future.png',
-    liveUrl: null,
+    liveUrl: 'https://dear-future-me-five.vercel.app/',
     filter: 'app',
     size: 'wide',
   },
