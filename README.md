@@ -10,15 +10,10 @@ It showcases my skills, projects, certifications, and professional background in
 ## Improvements from Version 1
 
 - Migrated to TypeScript
-
 - Refactored into reusable components
-
 - Cleaner UI/UX structure
-
 - Better layout consistency
-
 - Improved responsiveness
-
 - Enhanced performance
 
 ## What technologies I used for this project?
