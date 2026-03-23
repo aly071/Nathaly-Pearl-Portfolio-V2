@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -200,6 +200,17 @@ function Lightbox({
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
   const next = () => setCurrent((c) => (c + 1) % images.length);
 
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [images.length, onClose]);
+
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) onClose();
   };
@@ -226,7 +237,7 @@ function Lightbox({
             <motion.img
               key={current}
               src={images[current]}
-              alt=""
+              alt={project.title}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -30 }}
@@ -251,30 +262,6 @@ function Lightbox({
               </button>
             </>
           )}
-        </div>
-
-        <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div>
-            <h3 className="text-white font-semibold text-lg">{project.title}</h3>
-            <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{project.category}</p>
-          </div>
-          <div className="flex items-center gap-3">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full hover:bg-primary/80 transition-colors"
-              >
-                Live ↗
-              </a>
-            )}
-            {images.length > 1 && (
-              <span className="text-white/30 text-xs">
-                {current + 1} / {images.length}
-              </span>
-            )}
-          </div>
         </div>
 
         {images.length > 1 && (
