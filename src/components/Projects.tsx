@@ -35,18 +35,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // wide (reference)
-    title: 'Descry',
-    category: 'UI/UX Design • Mobile',
-    description: 'A skincare analysis app using facial scanning to detect skin conditions and recommend remedies.',
-    tools: ['Figma', 'UI/UX Design', 'Prototyping'],
-    gallery: ['/images/faceribil.png', '/images/faceribil1.png', '/images/faceribil2.png', '/images/faceribil3.png', '/images/faceribil4.png', '/images/faceribil5.png'],
-    mainImage: '/images/faceribil.png',
-    liveUrl: 'https://www.figma.com/proto/fRcQOhrxARfQ4VlZKQ5gNA/Face-Ribil?node-id=261-254&p=f&t=K3g9ZGubhUEFKmE3-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=261%3A254',
-    filter: 'app',
-    size: 'wide',
-  },
-  {
     // unchanged → standard
     title: 'Wedding Management',
     category: 'Web Development • React',
@@ -59,7 +47,30 @@ const projects: Project[] = [
     size: 'standard',
   },
   {
-    // same as Onboarding → wide
+    // wide (reference)
+    title: 'Descry',
+    category: 'UI/UX Design • Mobile',
+    description: 'A skincare analysis app using facial scanning to detect skin conditions and recommend remedies.',
+    tools: ['Figma', 'UI/UX Design', 'Prototyping'],
+    gallery: ['/images/faceribil.png', '/images/faceribil1.png', '/images/faceribil2.png', '/images/faceribil3.png', '/images/faceribil4.png', '/images/faceribil5.png'],
+    mainImage: '/images/faceribil.png',
+    liveUrl: 'https://www.figma.com/proto/fRcQOhrxARfQ4VlZKQ5gNA/Face-Ribil?node-id=261-254&p=f&t=K3g9ZGubhUEFKmE3-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=261%3A254',
+    filter: 'app',
+    size: 'wide',
+  },
+  {
+    title: 'Poster',
+    category: 'Graphics • Print',
+    description:
+      'A visually enticing advertisement combining bold typography and vibrant imagery.',
+    tools: ['Canva', 'Adobe Illustrator'],
+    gallery: ['/images/socmed4.png', '/images/socmed5.png'],
+    mainImage: '/images/socmed4.png',
+    liveUrl: 'https://www.canva.com/design/DAHC-MNDcAw/DxLWv9RBn3iha5fQp1hR6A/edit?utm_content=DAHC-MNDcAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
+    filter: 'graphics',
+    size: 'tall', 
+  },
+  {
     title: 'Code Assessment',
     category: 'Web Development • Figma',
     description: 'A platform for evaluating programming assignments using rubric-based fuzzy logic.',
@@ -71,7 +82,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // same as Onboarding → wide
     title: 'Talkie-Chum',
     category: 'UI/UX Design • Prototyping',
     description: 'An AI-powered assistant app designed for meetings, calls, messaging, and smart conversations.',
@@ -83,7 +93,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // same as Onboarding → wide
     title: 'Portfolio V1',
     category: 'Web Development • Bootstrap',
     description: 'A responsive portfolio website showcasing skills, projects, and certifications.',
@@ -95,7 +104,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // wide (reference)
     title: 'Onboarding System',
     category: 'Web Development • ASP.NET',
     description: 'A web-based onboarding platform with digital forms, training modules, dashboards, and reminders.',
@@ -118,7 +126,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // same as Descry → wide
     title: 'Social Media Design',
     category: 'Graphics • Branding',
     description: 'Graphics created for social media branding, engagement, and marketing communication.',
@@ -130,7 +137,6 @@ const projects: Project[] = [
     size: 'wide',
   },
   {
-    // same as Descry → wide
     title: 'Wedding Invitation',
     category: 'Graphics • Print',
     description: 'An elegant wedding invitation layout with romantic typography and clean aesthetics.',
@@ -151,18 +157,6 @@ const projects: Project[] = [
     liveUrl: null,
     filter: 'graphics',
     size: 'wide',
-  },
-  {
-    title: 'Poster',
-    category: 'Graphics • Print',
-    description:
-      'A visually enticing advertisement combining bold typography and vibrant imagery.',
-    tools: ['Canva', 'Adobe Illustrator'],
-    gallery: ['/images/socmed4.png', '/images/socmed5.png'],
-    mainImage: '/images/socmed4.png',
-    liveUrl: 'https://www.canva.com/design/DAHC-MNDcAw/DxLWv9RBn3iha5fQp1hR6A/edit?utm_content=DAHC-MNDcAw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton',
-    filter: 'graphics',
-    size: 'tall', 
   },
 ];
 
